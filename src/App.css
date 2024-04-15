@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #faf8ef;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+.game-blocks{
+    width: 520px;
+    height: 490px;
+    padding: 15px 19px;
+    gap: 10px;
+    background: #bbada0;
+    display: grid;
+    grid-template: repeat(4,1fr) / repeat(4,1fr);
+    border: none;
+    outline: none;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headContainer {
+    width: 520px;
+    display: flex;
+    justify-content: space-around;
+}
+.name h1{
+   font-size: 80px;
+   font-weight: bold;
+   color: #776e65;
+}
+.scoreContainer{
+    flex: 1fr;
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+button{
+    padding: 15px 20px;
+    border: none;
+    font-size: 18px;
+    color: #f9f6f2;
+    background: #bbada0;
+    margin-left: 24px;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.same{
+    padding: 1px 19px;
+    background: #bbada0;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 17px;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: #eee4da;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.score span{
+    color: #f9f6f2;
 }
-
-.App-link {
-  color: #61dafb;
+.block{
+display: flex;
+justify-content: center;
+width: 7rem;
+align-items: center;
+font-size: 43px;
+border: none;
+outline: none;
+text-align: center;
+color: rgba(0, 0, 0, 0.596);
+background: rgba(238, 228, 218, 0.35);
+border-radius: 7px;
+font-weight: bold;
+transition: .3s ease-in-out;
 }
+.block.cream{
+    background: #f3b27a;
+    color: #f9f6f2;
+}
+.block.cream-foncee{
+    color: #f9f6f2;
+    background: #f69664;
+}
+.block.cream-red{
+    color: #f9f6f2;
+    background: #f77c5f;
+}
+.block.cream-r{
+    color: #f9f6f2;
+    background: #f75f3b;
+}
+.block.cream-a{
+    color: #f9f6f2;
+    background: #edd073;
+    box-shadow: 0 0 30px 10px rgb(243 215 116 / 24%), inset 0 0 0 1px rgb(255 255 255 / 14%);
+    
+}
+.block.cream-b{
+    color: #f9f6f2;
+    background: #eeca53;
+    box-shadow: 0 0 30px 10px rgb(243 215 116 / 24%), inset 0 0 0 1px rgb(255 255 255 / 14%);
+}
+@media (min-width: 120px) and ( max-width:354px){
+    .keyBoard{
+        width: 10rem;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+   
+    }
+    .keys{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .keys div ,.down{
+       padding: 10px;
+        background-color: #f77c5f;
+        color: white;
+    }
+    .keys div:active ,.down:active{
+        background-color: #f3b27a;
+    }
+    .headContainer {
+        width: 313px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .name h1 {
+        font-size: 38px;
+    }
+    .scoreContainer {
+        display: flex;
+        width: 196px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        }
+        .same {
+            font-size: 11px;
+            padding: 2px 8px;
+            margin-bottom: 0;
+        }
+        button {
+            padding: 12px 18px;
+            font-size: 12px;
+            margin-left: 0;
+        }
+        .game-blocks {
+            width: 319px;
+            height: 361px;
+            padding:9px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+        }
+        .block {
+    display: flex;
+    justify-content: center;
+    width: 4rem;
+    font-size: 35px;
+    align-items: center;
+        }
+}
+@media (min-width: 354px) and ( max-width:479px){
+    .keyBoard{
+        width: 10rem;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+        margin-top: 10px;
+   
+    }
+    .keys{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .keys div ,.down{
+       padding: 10px;
+        background-color: #f77c5f;
+        color: white;
+    }
+    .keys div:active ,.down:active{
+        background-color: #f3b27a;
+    }
+    .headContainer {
+        width: 313px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .name h1 {
+        font-size: 38px;
+    }
+    .scoreContainer {
+        display: flex;
+        width: 196px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        }
+        .same {
+            font-size: 11px;
+            padding: 2px 8px;
+            margin-bottom: 0;
+        }
+        button {
+            padding: 12px 18px;
+            font-size: 12px;
+            margin-left: 0;
+        }
+        .game-blocks {
+            width: 390px;
+            height: 453px;
+            padding: 17px;
+        }
+        .block {
+         
+            display: flex;
+    justify-content: center;
+    width: 5rem;
+    font-size: 35px;
+    align-items: center;
+        }
+}
+@media ( max-width:1000px){
+    .keyBoard{
+        width: 10rem;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+        margin-top: 20px;
+   
+    }
+    .keys{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .keys div ,.down{
+       padding: 10px;
+        background-color: #f77c5f;
+        color: white;
+    }
+    .keys div:active ,.down:active{
+        background-color: #f3b27a;
+    }
+    
+}
+@media ( min-width:1000px){
+    .keyBoard{
+      display: none;
+    }
+ 
 }
